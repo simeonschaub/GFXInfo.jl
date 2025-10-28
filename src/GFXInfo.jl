@@ -13,6 +13,9 @@ end
 
 function active_gpu()
     handle = @ccall libgfxinfo_c_bindings.gfxinfo_active_gpu()::Ptr{Cvoid}
+    if handle == C_NULL
+        error("No active GPU found")
+    end
     return GPU(handle)
 end
 
@@ -25,7 +28,7 @@ function Base.getproperty(gpu::GPU, name::Symbol)
     elseif name === :family
         ptr = @ccall libgfxinfo_c_bindings.gfxinfo_get_family(handle::Ptr{Cvoid})::Cstring
     elseif name === :device_id
-        ptr = @ccall libgfxinfo_c_bindings.gfxinfo_get_device_id(handle::Ptr{Cvoid})::Cstring
+        return @ccall libgfxinfo_c_bindings.gfxinfo_get_device_id(handle::Ptr{Cvoid})::UInt32
     else
         throw(FieldError(gpu, name))
     end
