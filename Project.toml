@@ -1,0 +1,7 @@
+name = "GFXInfo"
+uuid = "1e0a258e-4f42-48e3-aec2-b8d74ef17dc4"
+authors = ["Simeon David Schaub <simeon@schaub.rocks> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.10"
