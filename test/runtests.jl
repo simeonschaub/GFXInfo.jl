@@ -5,7 +5,7 @@ using Test
     gpu = try
         active_gpu()
     catch e
-        @warn "No active GPU found" exception=(e, catch_backtrace())
+        @warn "No active GPU found" exception = (e, catch_backtrace())
         nothing
     end
     if gpu !== nothing
