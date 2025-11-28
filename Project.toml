@@ -1,10 +1,11 @@
 name = "GFXInfo"
 uuid = "1e0a258e-4f42-48e3-aec2-b8d74ef17dc4"
-version = "1.0.0-DEV"
+version = "1.0.0"
 authors = ["Simeon David Schaub <simeon@schaub.rocks> and contributors"]
 
 [deps]
 gfxinfo_c_bindings_jll = "00b32d8b-1458-5b75-bb06-93b2c7edeef7"
 
 [compat]
+gfxinfo_c_bindings_jll = "0.1"
 julia = "1.10"
